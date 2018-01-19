@@ -19,8 +19,15 @@ Route::get('/', function () {
     return view('site.index');
 });
 
-Route::get('/tour', function () {
-    return view('site.tour');
+Route::get('/userdetail', function () {
+    return view('site.userdetail');
+});
+Route::get('/itemform', function () {
+    return view('site.itemform');
+});
+
+Route::get('/itemstatus', function () {
+    return view('site.itemstatus');
 });
 
 Route::get('/pricing', function () {

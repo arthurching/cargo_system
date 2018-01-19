@@ -1,8 +1,8 @@
-@extends('site.layouts.main2')
+@extends('layouts.app')
 
 @section('content')
-
-    <div class="section grey text-center m-t-60 p-t-40 p-b-40" id="banner-footer">
+<div class="container">
+    <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
@@ -12,6 +12,6 @@
                 </div>
             </div>
         </div>
-
+    </div>
 </div>
 @endsection
