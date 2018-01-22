@@ -15,20 +15,36 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('logout', function (){
+    Auth::logout();
+    return redirect('/');
+});
+
 Route::get('/', function () {
     return view('site.index');
 });
 
-Route::get('/userdetail', function () {
-    return view('site.userdetail');
-});
-Route::get('/itemform', function () {
-    return view('site.itemform');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/itemform', function () {
+        return view('site.itemform');
+    });
+
+    Route::get('/itemstatus', function () {
+        return view('site.itemstatus');
+    });
+    Route::get('/userdetail', function () {
+        return view('site.userdetail');
+    });
 });
 
-Route::get('/itemstatus', function () {
-    return view('site.itemstatus');
-});
+//Route::get('/itemform', function () {
+//    return view('site.itemform');
+//});
+
+
+
+
+
 
 Route::get('/pricing', function () {
     return view('site.pricing');
